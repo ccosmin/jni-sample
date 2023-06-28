@@ -17,3 +17,7 @@ add_library(lib1 SHARED ${LIB1_SRCS})
 target_link_libraries(lib1 ${JNI_LIBRARIES} lib2)
 target_include_directories(lib1 PUBLIC ${CMAKE_SOURCE_DIR}/lib1)
 
+file(GLOB PATHSTUB_SRCS pathstub/*.cpp)
+add_library(pathstub SHARED ${PATHSTUB_SRCS})
+target_link_libraries(pathstub ${JNI_LIBRARIES})
+target_include_directories(pathstub PUBLIC ${CMAKE_SOURCE_DIR}/pathstub)
